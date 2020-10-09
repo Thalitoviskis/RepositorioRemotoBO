@@ -35,21 +35,17 @@ public class OutraTela extends AppCompatActivity {
                 R.layout.support_simple_spinner_dropdown_item,
                 relatorioGeral));
 
-        btnSair.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
 
         //obter de Bundle os valores salvos
         Bundle extra = getIntent().getExtras();
         String usuarioInformado = "";
-        if (extra != null) { //Verifica se extra não esta nullo (vazio)
+        if (extra != null) { //Verifica se btnSair.setOnClickListener(new View.OnClickListener() {
+                finish();
+            }
             //Obetem de extra valor salvo com a mesma chave usada
             usuarioInformado = extra.getString("chave");
         }
         //Apresenta o usúario logado
-        setTitle("Usúario Logado: " + usuarioInformado);
+
     }
-}

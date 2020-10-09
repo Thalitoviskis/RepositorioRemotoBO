@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.AndroidBoletimOnline.R;
+import com.example.AndroidBoletimOnline.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
     EditText User, Pwd;
