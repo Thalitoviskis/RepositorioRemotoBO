@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidBoletimOnline.iml" filepath="$PROJECT_DIR$/AndroidBoletimOnline.iml" group="AndroidBoletimOnline" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidBoletimOnline-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidBoletimOnline-app.iml" group="AndroidBoletimOnline/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RepositorioRemotoBO-AndroidBoletimOnline.iml" filepath="$PROJECT_DIR$/.idea/modules/RepositorioRemotoBO-AndroidBoletimOnline.iml" group="AndroidBoletimOnline" />
       <module fileurl="file://$PROJECT_DIR$/UsuarioSenha.iml" filepath="$PROJECT_DIR$/UsuarioSenha.iml" group="UsuarioSenha" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="AndroidBoletimOnline/app" />
     </modules>
