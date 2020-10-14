@@ -1,13 +1,16 @@
 package com.example.AndroidBoletimOnline;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 
 import com.example.AndroidBoletimOnline.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -26,6 +29,7 @@ public class TelaPrincipal extends AppCompatActivity {
         setContentView(R.layout.activity_tela_principal);
         //Tudo que está abaixo do setContentView está relacionado as outras partes do layout.
 
+
         //Configura barra de navegação
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,11 +39,13 @@ public class TelaPrincipal extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                exibirConfirmação();
+                }
+               //finish();
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         //.setAction("Action", null).show();
             }
-        });
+    );
 
         //Cria referencia para toda a area do Navigation Drawer
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -47,9 +53,10 @@ public class TelaPrincipal extends AppCompatActivity {
         //Cria referencia para a area de navegação
         NavigationView navigationView = findViewById(R.id.nav_view);
 
+
         //Define configurações do navigation drawer
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.nav_boletim, R.id.nav_sair)
+                R.id.nav_inicio, R.id.nav_boletim,R.id.nav_sair)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -63,7 +70,24 @@ public class TelaPrincipal extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-
+    public void exibirConfirmação() {
+        AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
+        msgBox.setTitle("Sair");
+        msgBox.setIcon(R.drawable.ic_menu_sair);
+        msgBox.setMessage("Tem certeza que deseja sair?");
+        msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        msgBox.show();
+    }
 
     @Override
     public boolean onSupportNavigateUp() {
