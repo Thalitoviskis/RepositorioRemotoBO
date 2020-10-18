@@ -1,24 +1,32 @@
 package com.example.AndroidBoletimOnline;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.AndroidBoletimOnline.ui.home.HomeFragment;
+import com.example.AndroidBoletimOnline.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+
     EditText User, Pwd;
     Button btnLogin;
     TextView btnRedefinirSenha;
+    ActivityMainBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         User = findViewById(R.id.edtUser);
         Pwd = findViewById(R.id.edtPwd);
@@ -29,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         User.requestFocus();
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
             @Override
             public void onClick(View v) {
 
@@ -45,12 +54,23 @@ public class MainActivity extends AppCompatActivity {
                     User.setText("");
                     Pwd.setText("");
                     User.requestFocus();
-                } else {
-                    Intent intent = new Intent(getApplicationContext(),TelaPrincipal.class);
-                    intent.putExtra("chave", usuario);
+
+                } else if (binding.rbAluno.isChecked()) {
+                    Intent intent = new Intent(getApplicationContext(), AlunoActivity.class);
                     startActivity(intent);
-                }
-            }
+
+                } else if (binding.rbProfessor.isChecked()) {
+                         Intent intent = new Intent(getApplicationContext(), ProfessorActivity.class);
+                         startActivity(intent);
+                     }
+                 }
+
+                //} else {
+                    //Intent intent = new Intent(getApplicationContext(), AlunoActivity.class);
+                    //intent.putExtra("chave", usuario);
+                    //startActivity(intent);
+                //}
+            //}
 
         });
         btnRedefinirSenha.setOnClickListener(new View.OnClickListener() {
@@ -60,5 +80,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity( intent );
             }
         });
+
     }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        binding=null;
+    }
+
 }

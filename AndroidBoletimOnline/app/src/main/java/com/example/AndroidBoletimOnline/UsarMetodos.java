@@ -1,8 +1,11 @@
 package com.example.AndroidBoletimOnline;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.Gravity;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
 
 public class UsarMetodos {
 
@@ -18,16 +21,13 @@ public class UsarMetodos {
         } else if (usuario.trim().equals("Aluno") && senha.trim().equals("999")) {
             verificacao = true;
         }
-        return  verificacao;
-}
+        return verificacao;
+    }
 
-    public static void alert (String s, Context context){
-        Toast toast = Toast.makeText(context,s,Toast.LENGTH_LONG);
+    public static void alert(String s, Context context) {
+        Toast toast = Toast.makeText(context, s, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_HORIZONTAL |
                 Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
     }
 }
-
-
-

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/inicioProfessorFragment">
+
+    <fragment
+        android:id="@+id/inicioProfessorFragment"
+        android:name="com.example.AndroidBoletimOnline.InicioProfessorFragment"
+        android:label="Inicio Professor"
+        tools:layout="@layout/fragment_inicio_professor" />
+    <fragment
+        android:id="@+id/atividadeProfessorFragment"
+        android:name="com.example.AndroidBoletimOnline.AtividadeProfessorFragment"
+        android:label="Atividade Professor"
+        tools:layout="@layout/fragment_atividade_professor" />
+    <fragment
+        android:id="@+id/atribuicaoNotasfragment"
+        android:name="com.example.AndroidBoletimOnline.atribuicaoNotasfragment"
+        android:label="Atribuicao Notas"
+        tools:layout="@layout/fragment_atribuicao_notas" />
+</navigation>
