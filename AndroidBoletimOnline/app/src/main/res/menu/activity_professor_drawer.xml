@@ -16,5 +16,6 @@
             android:id="@+id/atribuicaoNotasfragment"
             android:icon="@drawable/ic_menu_nota"
             android:title="Atribuição de Notas" />
+
     </group>
 </menu>

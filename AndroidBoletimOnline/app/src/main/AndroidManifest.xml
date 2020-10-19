@@ -24,7 +24,6 @@
         <activity android:name=".TelaRedefinirSenha"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
-        <activity android:name=".OutraTela" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
