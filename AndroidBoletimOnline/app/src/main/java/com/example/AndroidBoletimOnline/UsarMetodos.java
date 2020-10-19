@@ -16,9 +16,9 @@ public class UsarMetodos {
 
         if (usuario.trim().equals("Usuario") && senha.trim().equals("999")) {//trim() apagar todos os espaços
             verificacao = true;
-        } else if (usuario.trim().equals("ADM") && senha.trim().equals("999")) {
+        } else if (usuario.trim().equals("prof") && senha.trim().equals("123")) {
             verificacao = true;
-        } else if (usuario.trim().equals("Aluno") && senha.trim().equals("999")) {
+        } else if (usuario.trim().equals("aluno") && senha.trim().equals("123")) {
             verificacao = true;
         }
         return verificacao;

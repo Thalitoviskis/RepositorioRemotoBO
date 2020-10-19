@@ -1,9 +1,12 @@
 package com.example.AndroidBoletimOnline;
 
 import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import com.example.AndroidBoletimOnline.R;
@@ -27,8 +30,6 @@ public class AlunoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_principal);
-        //Tudo que está abaixo do setContentView está relacionado as outras partes do layout.
-
 
         //Configura barra de navegação
         Toolbar toolbar = findViewById(R.id.toolbar);

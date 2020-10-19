@@ -17,8 +17,13 @@
             android:name=".AlunoActivity"
             android:label="@string/title_activity_tela_principal"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".TelaRedefinirSenha" />
+
+        <activity android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
+        <activity android:name=".TelaRedefinirSenha"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+
         <activity android:name=".OutraTela" />
         <activity android:name=".Splash">
             <intent-filter>

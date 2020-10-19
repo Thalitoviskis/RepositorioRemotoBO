@@ -9,9 +9,11 @@
 
     <EditText
         android:id="@+id/edtPwd"
-        android:layout_width="350dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="116dp"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPersonName|textPassword"
@@ -20,124 +22,131 @@
         android:textColorHint="#FFFFFF"
         android:textColorLink="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtUser" />
 
     <EditText
         android:id="@+id/edtUser"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
+        android:layout_width="300dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="116dp"
         android:ems="10"
-        android:hint="Usuário"
+        android:hint="E-mail"
         android:inputType="textPersonName"
         android:textColor="#FFFFFF"
         android:textColorHighlight="#FFFFFF"
         android:textColorHint="#FFFFFF"
         android:textColorLink="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.31"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BoletimOnline" />
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="200dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="88dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="174dp"
         android:background="@drawable/background_botao"
         android:text="ENTRAR"
         android:textColor="#FFFFFF"
         android:textColorHint="#E3D7D7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPwd" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/rdgEscolhas" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="311dp" />
+        app:layout_constraintGuide_end="329dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="301dp" />
+        app:layout_constraintGuide_begin="295dp" />
 
     <TextView
         android:id="@+id/btnRedefinirSenha"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="167dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="146dp"
         android:text="ESQUECI A SENHA"
         android:textColor="#FDFDFD"
         android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <RadioGroup
+        android:id="@+id/rdgEscolhas"
+        android:layout_width="307dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="64dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtPwd">
+
+        <RadioButton
+            android:id="@+id/rbAluno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Sou Aluno     "
+            android:textColor="#FDFDFD" />
+
+        <RadioButton
+            android:id="@+id/rbProfessor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sou Professor      "
+            android:textColor="#FDFDFD"
+            android:textColorHint="#FFFFFF" />
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="147dp"
+        android:layout_marginEnd="411dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="147dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/BoletimOnline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="114dp"
+        android:layout_marginEnd="127dp"
         android:text="BOLETIM ONLINE"
         android:textColor="#FBF9F9"
         android:textSize="24sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
-    <RadioGroup
-        android:id="@+id/rdgProf_Aluno"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-
-    <RadioButton
-        android:id="@+id/rbAluno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="32dp"
-        android:text="Sou Aluno"
-        app:layout_constraintStart_toStartOf="@+id/edtPwd"
-        app:layout_constraintTop_toBottomOf="@+id/edtPwd"
-        android:checked="true"/>
-
-    <RadioButton
-        android:id="@+id/rbProfessor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="52dp"
-        android:text="Sou Professor"
-        app:layout_constraintEnd_toEndOf="@+id/edtPwd"
-        app:layout_constraintTop_toBottomOf="@+id/edtPwd" />
-
-    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
