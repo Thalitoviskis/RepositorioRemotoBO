@@ -17,7 +17,7 @@
         tools:layout="@layout/fragment_atividade_professor" />
     <fragment
         android:id="@+id/atribuicaoNotasfragment"
-        android:name="com.example.AndroidBoletimOnline.atribuicaoNotasfragment"
+        android:name="com.example.AndroidBoletimOnline.AtribuicaoNotasfragment"
         android:label="Atribuicao Notas"
         tools:layout="@layout/fragment_atribuicao_notas" />
 </navigation>

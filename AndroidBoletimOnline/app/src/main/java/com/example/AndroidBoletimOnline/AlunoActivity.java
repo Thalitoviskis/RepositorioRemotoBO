@@ -1,15 +1,9 @@
 package com.example.AndroidBoletimOnline;
 
 import android.content.DialogInterface;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Menu;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.Button;
 
-import com.example.AndroidBoletimOnline.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 
@@ -29,7 +23,7 @@ public class AlunoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_principal);
+        setContentView(R.layout.activity_aluno);
 
         //Configura barra de navegação
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -57,7 +51,7 @@ public class AlunoActivity extends AppCompatActivity {
 
         //Define configurações do navigation drawer
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_inicio, R.id.nav_boletim,R.id.nav_sair)
+                R.id.InicioAlunoFragment,R.id.BoletimAlunoFragment,R.id.SobreAlunoFragment)
                 .setDrawerLayout(drawer)
                 .build();
 

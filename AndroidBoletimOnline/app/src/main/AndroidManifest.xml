@@ -19,7 +19,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AlunoActivity"
-            android:label="@string/title_activity_tela_principal"
+            android:label="@string/title_activity_AlunoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"

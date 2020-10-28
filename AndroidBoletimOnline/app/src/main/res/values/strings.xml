@@ -2,7 +2,7 @@
     <string name="app_name">Boletim Online</string>
     <string name="user">Usúario</string>
     <string name="pwd">Senha</string>
-    <string name="title_activity_tela_principal">TelaPrincipal</string>
+    <string name="title_activity_AlunoActivity">Aluno</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Thalita Rafaela</string>
@@ -11,8 +11,8 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Início</string>
-    <string name="menu_gallery">Boletim</string>
-    <string name="menu_slideshow">Sair</string>
+    <string name="menu_boletim">Boletim</string>
+    <string name="menu_sobre">Sobre</string>
 
     <string name="home_second">Home Second</string>
 

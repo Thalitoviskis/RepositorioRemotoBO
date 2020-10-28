@@ -17,7 +17,7 @@ public class RedefinirSenhaTempActivity extends AppCompatActivity {
     boolean splashScreen;
 
     */
-   
+
     TextView tvTextoRS;
     EditText edtConfirSenhaTemp, edtSenhaTemp;
     Button btnOk;

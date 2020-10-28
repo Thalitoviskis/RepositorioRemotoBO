@@ -5,23 +5,20 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_inicio">
 
-    <fragment
-        android:id="@+id/nav_inicio"
-        android:name="com.example.AndroidBoletimOnline.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_inicio">
-
-    </fragment>
 
     <fragment
-        android:id="@+id/nav_boletim"
-        android:name="com.example.AndroidBoletimOnline.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_boletim" />
-
+        android:id="@+id/InicioAlunoFragment"
+        android:name="com.example.AndroidBoletimOnline.InicioAlunoFragment"
+        android:label="fragment_inicio_aluno"
+        tools:layout="@layout/fragment_inicio_aluno" />
     <fragment
-        android:id="@+id/nav_sair"
-        android:name="com.example.AndroidBoletimOnline.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_sair" />
+        android:id="@+id/BoletimAlunoFragment"
+        android:name="com.example.AndroidBoletimOnline.BoletimAlunoFragment"
+        android:label="fragment_boletim_aluno"
+        tools:layout="@layout/fragment_boletim_aluno" />
+    <fragment
+        android:id="@+id/SobreAlunoFragment"
+        android:name="com.example.AndroidBoletimOnline.SobreAlunoFragment"
+        android:label="fragment_sobre_aluno"
+        tools:layout="@layout/fragment_sobre_aluno" />
 </navigation>

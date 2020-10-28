@@ -22,8 +22,8 @@ public class SlideshowFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         slideshowViewModel =
                 ViewModelProviders.of(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_sair, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
+        View root = inflater.inflate(R.layout.fragment_sobre_aluno  , container, false);
+        final TextView textView = root.findViewById(R.id.sobre_aluno);
         slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
