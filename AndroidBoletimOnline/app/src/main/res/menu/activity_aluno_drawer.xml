@@ -7,7 +7,7 @@
         <item
             android:id="@+id/InicioAlunoFragment"
             android:icon="@drawable/ic_menu_inicial"
-            android:title="@string/menu_home" />
+            android:title="Inicio" />
         <item
             android:id="@+id/BoletimAlunoFragment"
             android:icon="@drawable/ic_menu_boletim"
