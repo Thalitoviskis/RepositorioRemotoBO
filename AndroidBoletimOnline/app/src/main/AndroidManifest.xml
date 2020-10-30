@@ -10,9 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".RedefinirSenhaTempActivity">
-
-        </activity>
+        <activity android:name=".RedefinirSenhaTempActivity"/>
         <activity
             android:name=".ProfessorActivity"
             android:label="@string/title_activity_professor"
@@ -27,10 +25,10 @@
         <activity
             android:name=".TelaRedefinirSenha"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
+
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

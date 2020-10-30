@@ -11,16 +11,14 @@
         <item
             android:id="@+id/atividadeProfessorFragment"
             android:icon="@drawable/ic_menu_atividade"
-            android:title="Atividade" />
+            android:title="@string/menu_atividade" />
         <item
             android:id="@+id/atribuicaoNotasfragment"
             android:icon="@drawable/ic_menu_nota"
-            android:title="Atribuição de Notas"/>
+            android:title="@string/menu_atribuição_de_notas"/>
         <item
-            android:id="@+id/SobreProfessorFragment"
+            android:id="@+id/sobreProfessorFragment"
             android:icon="@drawable/ic_menu_sobre"
             android:title="Sobre"/>
-
-
     </group>
 </menu>

@@ -51,7 +51,8 @@ public class ProfessorActivity extends AppCompatActivity {
 
         //Define configurações do navigation drawer
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.inicioProfessorFragment, R.id.atividadeProfessorFragment, R.id.atribuicaoNotasfragment)
+                R.id.inicioProfessorFragment, R.id.atividadeProfessorFragment, R.id.atribuicaoNotasfragment,
+                R.id.sobreProfessorFragment)
                 .setDrawerLayout(drawer)
                 .build();
 
