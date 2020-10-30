@@ -20,4 +20,9 @@
         android:name="com.example.AndroidBoletimOnline.AtribuicaoNotasfragment"
         android:label="Atribuicao Notas"
         tools:layout="@layout/fragment_atribuicao_notas" />
+    <fragment
+        android:id="@+id/sobreProfessorFragment"
+        android:name="com.example.AndroidBoletimOnline.SobreProfessorFragment"
+        android:label="fragment_sobre_professor"
+        tools:layout="@layout/fragment_sobre_professor" />
 </navigation>
