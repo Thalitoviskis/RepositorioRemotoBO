@@ -32,16 +32,6 @@ public class RedefinirSenhaTempActivity extends AppCompatActivity {
         edtConfirSenhaTemp = findViewById(R.id.edtConfirSenhaTmp);
         btnOk = findViewById(R.id.btnOk);
 
-        /*sharedpreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-        splashScreen = sharedpreferences.getBoolean("splashScreen", false);
-        if (splashScreen == true) {
-            Intent mainIntent = new Intent(getApplicationContext(), ProfessorActivity.class);
-            startActivity(mainIntent);
-        } else {
-            setContentView(R.layout.activity_redefinir_senha_temp);
-        }
-
-         */
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,5 +55,6 @@ public class RedefinirSenhaTempActivity extends AppCompatActivity {
 
 
         });
+
     }
 }

@@ -20,6 +20,8 @@ public class UsarMetodos {
             verificacao = true;
         } else if (usuario.trim().equals("aluno") && senha.trim().equals("123")) {
             verificacao = true;
+        }else if (usuario.trim().equals("teste") && senha.trim().equals("111")){
+            verificacao = true;
         }
         return verificacao;
     }

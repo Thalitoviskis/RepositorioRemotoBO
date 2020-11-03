@@ -9,6 +9,10 @@
             android:icon="@drawable/ic_menu_inicial"
             android:title="Inicio" />
         <item
+            android:id="@+id/MeuPerfilAlunoFragment"
+            android:icon="@drawable/ic_menu_perfil"
+            android:title="Meu Perfil"/>
+        <item
             android:id="@+id/BoletimAlunoFragment"
             android:icon="@drawable/ic_menu_boletim"
             android:title="Boletim" />

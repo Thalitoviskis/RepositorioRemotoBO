@@ -19,6 +19,6 @@
         <item
             android:id="@+id/sobreProfessorFragment"
             android:icon="@drawable/ic_menu_sobre"
-            android:title="Sobre"/>
+            android:title="@string/menu_sobre"/>
     </group>
 </menu>

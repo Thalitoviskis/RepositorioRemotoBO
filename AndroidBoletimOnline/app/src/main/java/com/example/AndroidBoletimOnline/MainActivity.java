@@ -45,6 +45,20 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnRedefinirSenha = findViewById(R.id.btnRedefinirSenha);
 
+
+        /* SharedPreferences sharedPrefs = getApplicationContext().getSharedPreferences("primeiro acesso", Context.MODE_PRIVATE);
+
+        if (!sharedPrefs.getBoolean("primeiroAcesso", false)) {
+            Intent intent = new Intent(this, RedefinirSenhaTempActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            startActivity(intent);
+            finish();
+
+            return;
+        }
+        */
+
         User.requestFocus();
 
             btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-
 
         }
         @Override

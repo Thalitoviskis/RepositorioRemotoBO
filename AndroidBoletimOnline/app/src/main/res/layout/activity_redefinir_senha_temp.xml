@@ -4,33 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/corLogo"
+    android:background="@color/design_default_color_primary"
     tools:context=".RedefinirSenhaTempActivity">
 
     <TextView
         android:id="@+id/tvTextoRS"
-        android:layout_width="314dp"
-        android:layout_height="61dp"
+        android:layout_width="294dp"
+        android:layout_height="82dp"
         android:layout_marginStart="48dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="27dp"
         android:layout_marginEnd="49dp"
-        android:text="Para a sua segurança, redefina agora sua senha."
+        android:text="Para a sua segurança,  redefina agora sua senha.   "
         android:textColor="#D7FFFFFF"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgbAlerta"></TextView>
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+    </TextView>
 
     <EditText
         android:id="@+id/edtConfirSenhaTmp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="244dp"
+        android:layout_height="50dp"
         android:layout_marginStart="90dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="90dp"
+        android:drawableLeft="@drawable/ic_menu_cadeado"
+        android:drawableTint="@color/CorCad"
         android:ems="10"
         android:hint="Confirme sua nova senha"
         android:inputType="textPassword"
+        android:singleLine="false"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaTemp" />
@@ -42,6 +48,7 @@
         android:layout_marginStart="162dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="162dp"
+        android:backgroundTint="#FBFBFB"
         android:text="Ok!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,30 +56,30 @@
 
     <EditText
         android:id="@+id/edtSenhaTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="237dp"
+        android:layout_height="52dp"
         android:layout_marginStart="90dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="90dp"
+        android:drawableLeft="@drawable/ic_menu_cadeado"
+        android:drawableTint="@color/CorCad"
         android:ems="10"
-        android:hint="Digite sua nova senha"
+        android:hint="  Digite sua nova senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTextoRS" />
 
-    <ImageButton
-        android:id="@+id/imgbAlerta"
-        android:layout_width="70dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="90dp"
-        android:tint="#ff0000"
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="73dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="169dp"
+        android:layout_marginTop="101dp"
+        android:layout_marginEnd="169dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_dialog_alert" />
+        app:srcCompat="@android:drawable/ic_dialog_info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

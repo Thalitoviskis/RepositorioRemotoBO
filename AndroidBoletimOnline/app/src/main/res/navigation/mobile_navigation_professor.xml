@@ -8,12 +8,12 @@
     <fragment
         android:id="@+id/inicioProfessorFragment"
         android:name="com.example.AndroidBoletimOnline.InicioProfessorFragment"
-        android:label="Inicio Professor"
+        android:label="Inicio"
         tools:layout="@layout/fragment_inicio_professor" />
     <fragment
         android:id="@+id/atividadeProfessorFragment"
         android:name="com.example.AndroidBoletimOnline.AtividadeProfessorFragment"
-        android:label="Atividade Professor"
+        android:label="Atividade"
         tools:layout="@layout/fragment_atividade_professor" />
     <fragment
         android:id="@+id/atribuicaoNotasfragment"
@@ -23,6 +23,6 @@
     <fragment
         android:id="@+id/sobreProfessorFragment"
         android:name="com.example.AndroidBoletimOnline.SobreProfessorFragment"
-        android:label="fragment_sobre_professor"
+        android:label="Sobre"
         tools:layout="@layout/fragment_sobre_professor" />
 </navigation>
