@@ -1,11 +1,11 @@
 package com.example.AndroidBoletimOnline;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText User, Pwd;
     Button btnLogin;
-    TextView btnRedefinirSenha;
+    TextView btnRedefinirSenha, btnSair;
     ActivityMainBinding binding;
 
     @Override
@@ -45,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnRedefinirSenha = findViewById(R.id.btnRedefinirSenha);
 
+        btnSair = findViewById(R.id.btnSair);
+        btnSair.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                exibirConfirmaçãoDois();
+            }
+        });
+
 
         /* SharedPreferences sharedPrefs = getApplicationContext().getSharedPreferences("primeiro acesso", Context.MODE_PRIVATE);
 
@@ -61,53 +69,72 @@ public class MainActivity extends AppCompatActivity {
 
         User.requestFocus();
 
-            btnLogin.setOnClickListener(new View.OnClickListener() {
-                @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
-                @Override
-                public void onClick(View v) {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
+            @Override
+            public void onClick(View v) {
 
-                    String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
-                    String senha = Pwd.getText().toString();
+                String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
+                String senha = Pwd.getText().toString();
 
-                    if (usuario.isEmpty() || senha.isEmpty()) {//Verificar se estão vazio
-                        UsarMetodos.alert("Não deixe em branco.",
-                                getApplicationContext());
+                if (usuario.isEmpty() || senha.isEmpty()) {//Verificar se estão vazio
+                    UsarMetodos.alert("Preencha todos os campos.",
+                            getApplicationContext());
 
-                    } else if (UsarMetodos.login(usuario, senha) == false) {//Passa usúario e senha
-                        UsarMetodos.alert("Usuário ou senha inválidos.",
-                                getApplicationContext());
-                        User.setText("");
-                        Pwd.setText("");
-                        User.requestFocus();
+                } else if (UsarMetodos.login(usuario, senha) == false) {//Passa usúario e senha
+                    UsarMetodos.alert("Usuário ou senha inválidos.",
+                            getApplicationContext());
+                    User.setText("");
+                    Pwd.setText("");
+                    User.requestFocus();
 
-                    } else if (binding.rbAluno.isChecked()) {
-                        Intent intent = new Intent(getApplicationContext(),AlunoActivity .class);
-                        startActivity(intent);
+                } else if (binding.rbAluno.isChecked()) {
+                    Intent intent = new Intent(getApplicationContext(),RedefinirSenhaTempAluno.class);
+                    startActivity(intent);
 
-                    } else if (binding.rbProfessor.isChecked()) {
-                        Intent intent = new Intent(getApplicationContext(),RedefinirSenhaTempActivity.class);
-                        startActivity(intent);
-                    }
-                }
-
-                //} else {
-                //Intent intent = new Intent(getApplicationContext(), AlunoActivity.class);
-                //intent.putExtra("chave", usuario);
-                //startActivity(intent);
-                //}
-                //}
-
-            });
-            btnRedefinirSenha.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(getApplicationContext(), TelaRedefinirSenha.class);
+                } else if (binding.rbProfessor.isChecked()) {
+                    Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempProfessor.class);
                     startActivity(intent);
                 }
-            });
+            }
 
-        }
-        @Override
+            //} else {
+            //Intent intent = new Intent(getApplicationContext(), AlunoActivity.class);
+            //intent.putExtra("chave", usuario);
+            //startActivity(intent);
+            //}
+            //}
+
+        });
+        btnRedefinirSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), TelaRedefinirSenha.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void exibirConfirmaçãoDois() {
+        AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
+        msgBox.setTitle("Sair");
+        msgBox.setMessage("Tem certeza que deseja sair?");
+        msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+        msgBox.show();
+    }
+
+
+    @Override
         protected void onDestroy () {
             super.onDestroy();
             binding = null;

@@ -159,4 +159,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/btnSair"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="178dp"
+        android:text="Sair"
+        android:textAllCaps="true"
+        android:textColor="@android:color/holo_red_light"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRedefinirSenha" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

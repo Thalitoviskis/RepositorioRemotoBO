@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".RedefinirSenhaTempAluno"></activity>
-        <activity android:name=".RedefinirSenhaTempActivity" />
+        <activity android:name=".RedefinirSenhaTempProfessor" />
         <activity
             android:name=".ProfessorActivity"
             android:label="@string/title_activity_professor"

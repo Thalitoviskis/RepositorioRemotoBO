@@ -44,6 +44,12 @@ public class TelaRedefinirSenha extends AppCompatActivity {
 
                 if (usuarioRed.isEmpty() || novaSenha.isEmpty() || confirmarS.isEmpty()) {
                     UsarMetodos.alert("Não deixe em branco.", getApplicationContext());
+
+                } else if (!novaSenha.equals(confirmarS)) {
+                    UsarMetodos.alert("Senhas não conferem.", getApplicationContext());
+                    edtNovaSenha.setText("");
+                    edtConfirmarSenha.setText("");
+
                 } else {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);

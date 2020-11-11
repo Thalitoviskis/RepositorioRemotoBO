@@ -11,8 +11,8 @@
         android:id="@+id/edtConfirmeSPerfilAluno"
         android:layout_width="263dp"
         android:layout_height="58dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="21dp"
         android:layout_marginEnd="65dp"
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:drawableTint="@android:color/darker_gray"
@@ -20,17 +20,16 @@
         android:hint=" Confirme sua nova senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtSenhaAlunoPerfil" />
 
     <ImageView
         android:id="@+id/imgPerfilAluno"
-        android:layout_width="228dp"
-        android:layout_height="219dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="83dp"
+        android:layout_width="170dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="121dp"
         android:src="@drawable/perfil"
         android:tint="@color/corLogo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +40,8 @@
         android:id="@+id/edtSenhaAlunoPerfil"
         android:layout_width="263dp"
         android:layout_height="58dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="26dp"
         android:layout_marginEnd="65dp"
         android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:drawableTint="@android:color/darker_gray"
@@ -50,7 +49,6 @@
         android:hint=" Senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtEmailPerfilAluno" />
 
@@ -58,8 +56,8 @@
         android:id="@+id/edtEmailPerfilAluno"
         android:layout_width="263dp"
         android:layout_height="58dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="83dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="65dp"
         android:drawableLeft="@drawable/ic_email_black_24dp"
         android:drawableTint="@android:color/darker_gray"
@@ -67,17 +65,16 @@
         android:hint=" E-mail"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgPerfilAluno" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAlterarFoto" />
 
     <Button
         android:id="@+id/btnSalveAlt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="122dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="122dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="113dp"
         android:text="Salvar Alterações"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,4 +93,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="346dp" />
+
+    <TextView
+        android:id="@+id/tvAlterarFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="167dp"
+        android:layout_marginTop="7dp"
+        android:text="Alterar foto"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/corLogo"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgPerfilAluno" />
 </androidx.constraintlayout.widget.ConstraintLayout>

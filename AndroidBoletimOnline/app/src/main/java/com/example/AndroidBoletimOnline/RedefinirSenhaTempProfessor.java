@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class RedefinirSenhaTempActivity extends AppCompatActivity {
+public class RedefinirSenhaTempProfessor extends AppCompatActivity {
 
    /* SharedPreferences sharedpreferences;
     boolean splashScreen;
@@ -17,17 +17,17 @@ public class RedefinirSenhaTempActivity extends AppCompatActivity {
     */
 
     TextView tvTextoRS;
-    EditText edtConfirSenhaTemp, edtSenhaTemp;
+    EditText edtConfirSenhaTempProfessor, edtSenhaTempProfessor;
     Button btnOk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_redefinir_senha_temp);
+        setContentView(R.layout.activity_redefinir_senha_temp_professor);
 
         tvTextoRS = findViewById(R.id.tvTextoRS);
-        edtSenhaTemp = findViewById(R.id.edtSenhaTemp);
-        edtConfirSenhaTemp = findViewById(R.id.edtConfirSenhaTmp);
+        edtSenhaTempProfessor = findViewById(R.id.edtSenhaTempProfessor);
+        edtConfirSenhaTempProfessor = findViewById(R.id.edtConfirSenhaTmpProfessor);
         btnOk = findViewById(R.id.btnOk);
 
 
@@ -35,15 +35,20 @@ public class RedefinirSenhaTempActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String senhaT = edtSenhaTemp.getText().toString();
-                String confirS = edtConfirSenhaTemp.getText().toString();
+                String senhaT = edtSenhaTempProfessor.getText().toString();
+                String confirS = edtConfirSenhaTempProfessor.getText().toString();
 
                 if (senhaT.isEmpty() || confirS.isEmpty()) {//Verificar se estão vazios
                     UsarMetodos.alert("Não deixe em branco.",
                             getApplicationContext());
-                    edtSenhaTemp.setText("");
-                    edtConfirSenhaTemp.setText("");
-                    edtSenhaTemp.requestFocus();
+                    edtSenhaTempProfessor.setText("");
+                    edtConfirSenhaTempProfessor.setText("");
+                    edtSenhaTempProfessor.requestFocus();
+
+                } else if (!senhaT.equals(confirS)) {
+                    UsarMetodos.alert("Senhas não conferem.", getApplicationContext());
+                    edtSenhaTempProfessor.setText("");
+                    edtConfirSenhaTempProfessor.setText("");
 
                 } else {
                     Intent intent = new Intent(getApplicationContext(), ProfessorActivity.class);
