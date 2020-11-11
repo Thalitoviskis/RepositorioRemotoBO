@@ -3,26 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/inicioProfessorFragment">
+    app:startDestination="@+id/atividadesProfessorFragment">
 
     <fragment
-        android:id="@+id/inicioProfessorFragment"
-        android:name="com.example.AndroidBoletimOnline.InicioProfessorFragment"
-        android:label="Inicio"
-        tools:layout="@layout/fragment_inicio_professor" />
-    <fragment
-        android:id="@+id/atividadeProfessorFragment"
-        android:name="com.example.AndroidBoletimOnline.AtividadeProfessorFragment"
-        android:label="Atividade"
-        tools:layout="@layout/fragment_atividade_professor" />
-    <fragment
-        android:id="@+id/atribuicaoNotasfragment"
-        android:name="com.example.AndroidBoletimOnline.AtribuicaoNotasfragment"
-        android:label="Atribuicao Notas"
-        tools:layout="@layout/fragment_atribuicao_notas" />
+        android:id="@+id/atividadesProfessorFragment"
+        android:name="com.example.AndroidBoletimOnline.AtividadesProfessorFragment"
+        android:label="Atividades"
+        tools:layout="@layout/fragment_atividades_professor" />
     <fragment
         android:id="@+id/sobreProfessorFragment"
         android:name="com.example.AndroidBoletimOnline.SobreProfessorFragment"
         android:label="Sobre"
         tools:layout="@layout/fragment_sobre_professor" />
+    <fragment
+        android:id="@+id/meuPerfilProfessorFragment"
+        android:name="com.example.AndroidBoletimOnline.MeuPerfilProfessorFragment"
+        android:label="fragment_meu_perfil_professor"
+        tools:layout="@layout/fragment_meu_perfil_professor" />
 </navigation>

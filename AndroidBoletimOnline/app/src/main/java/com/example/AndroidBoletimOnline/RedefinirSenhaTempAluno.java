@@ -9,8 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class RedefinirSenhaTempAluno extends AppCompatActivity {
 
     TextView tvAlert;
@@ -24,7 +22,7 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
 
         tvAlert = findViewById(R.id.tvAlert);
         edtSenhaTempAluno = findViewById(R.id.edtSenhaTempAluno);
-        edtConfirSenhaTempAluno = findViewById(R.id.edtConfirmeSPerfilAluno);
+        edtConfirSenhaTempAluno = findViewById(R.id.edtConfirmeSPerfilProf);
 
         btnOK = findViewById(R.id.btnOK);
 

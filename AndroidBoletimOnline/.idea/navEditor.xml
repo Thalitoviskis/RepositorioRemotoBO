@@ -32,6 +32,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="MeuPerfilAlunoFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="SobreAlunoFragment">
                     <value>
                       <LayoutPositions>
@@ -39,18 +51,6 @@
                           <Point>
                             <option name="x" value="227" />
                             <option name="y" value="360" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="meuPerfilAlunoFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -71,32 +71,20 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="127" />
-                            <option name="y" value="-20" />
+                            <option name="x" value="296" />
+                            <option name="y" value="-31" />
                           </Point>
                         </option>
                       </LayoutPositions>
                     </value>
                   </entry>
-                  <entry key="atribuicaoNotasfragment">
+                  <entry key="meuPerfilProfessorFragment">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="-78" />
-                            <option name="y" value="268" />
-                          </Point>
-                        </option>
-                      </LayoutPositions>
-                    </value>
-                  </entry>
-                  <entry key="inicioProfessorFragment">
-                    <value>
-                      <LayoutPositions>
-                        <option name="myPosition">
-                          <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
+                            <option name="x" value="60" />
+                            <option name="y" value="-27" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -107,8 +95,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="130" />
-                            <option name="y" value="266" />
+                            <option name="x" value="66" />
+                            <option name="y" value="259" />
                           </Point>
                         </option>
                       </LayoutPositions>

@@ -13,10 +13,8 @@
     <string name="menu_home">Início</string>
     <string name="menu_boletim">Boletim</string>
     <string name="menu_sobre">Sobre</string>
-    <string name="menu_atividade">Atividade</string>
-    <string name="menu_atribuição_de_notas">Atribuiçao de Notas</string>
-
-
+    <string name="menu_atividades">Atividades</string>
+    <string name="menu_perfilprofessor">Meu Perfil</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="title_activity_professor">ProfessorActivity</string>
 

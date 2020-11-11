@@ -5,17 +5,13 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/inicioProfessorFragment"
-            android:icon="@drawable/ic_menu_inicial"
-            android:title="@string/menu_home" />
+            android:id="@+id/meuPerfilProfessorFragment"
+            android:icon="@drawable/ic_menu_perfil"
+            android:title="@string/menu_perfilprofessor"/>
         <item
-            android:id="@+id/atividadeProfessorFragment"
+            android:id="@+id/atividadesProfessorFragment"
             android:icon="@drawable/ic_menu_atividade"
-            android:title="@string/menu_atividade" />
-        <item
-            android:id="@+id/atribuicaoNotasfragment"
-            android:icon="@drawable/ic_menu_nota"
-            android:title="@string/menu_atribuição_de_notas"/>
+            android:title="@string/menu_atividades" />
         <item
             android:id="@+id/sobreProfessorFragment"
             android:icon="@drawable/ic_menu_sobre"

@@ -50,9 +50,8 @@ public class ProfessorActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         //Define configurações do navigation drawer
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.inicioProfessorFragment, R.id.atividadeProfessorFragment, R.id.atribuicaoNotasfragment,
-                R.id.sobreProfessorFragment)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.meuPerfilProfessorFragment,
+                R.id.atividadesProfessorFragment,R.id.sobreProfessorFragment)
                 .setDrawerLayout(drawer)
                 .build();
 
