@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".RedefinirSenhaTempActivity"/>
+        <activity android:name=".RedefinirSenhaTempAluno"></activity>
+        <activity android:name=".RedefinirSenhaTempActivity" />
         <activity
             android:name=".ProfessorActivity"
             android:label="@string/title_activity_professor"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AlunoActivity"
             android:label="@string/title_activity_AlunoActivity"
@@ -25,10 +25,10 @@
         <activity
             android:name=".TelaRedefinirSenha"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
