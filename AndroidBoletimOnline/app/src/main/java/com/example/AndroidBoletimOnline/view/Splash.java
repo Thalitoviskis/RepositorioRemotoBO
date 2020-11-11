@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline;
+package com.example.AndroidBoletimOnline.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import com.example.AndroidBoletimOnline.R;
+import com.example.AndroidBoletimOnline.model.MainActivity;
 
 public class Splash extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class Splash extends AppCompatActivity {
        new Handler().postDelayed(new Runnable() {
            @Override
            public void run() {
-               Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+               Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                startActivity(intent);
                finish();
            }

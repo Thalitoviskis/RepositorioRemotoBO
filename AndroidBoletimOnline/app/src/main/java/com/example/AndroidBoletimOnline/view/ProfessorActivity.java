@@ -1,10 +1,13 @@
-package com.example.AndroidBoletimOnline;
+package com.example.AndroidBoletimOnline.view;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Menu;
 
+import com.example.AndroidBoletimOnline.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,14 +19,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class AlunoActivity extends AppCompatActivity {
+public class ProfessorActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aluno);
+        setContentView(R.layout.activity_professor);
 
         //Configura barra de navegação
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -32,15 +35,14 @@ public class AlunoActivity extends AppCompatActivity {
         //código responsavel pelo icone de Mensagem
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                exibirConfirmação();
-                }
-               //finish();
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        //.setAction("Action", null).show();
-            }
-    );
+                                   @Override
+                                   public void onClick(View view) { exibirConfirmação();
+                                   }
+                                   //finish();
+                                   //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                                   //.setAction("Action", null).show();
+                               }
+        );
 
         //Cria referencia para toda a area do Navigation Drawer
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -48,10 +50,9 @@ public class AlunoActivity extends AppCompatActivity {
         //Cria referencia para a area de navegação
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-
         //Define configurações do navigation drawer
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.InicioAlunoFragment,R.id.MeuPerfilAlunoFragment,R.id.BoletimAlunoFragment,R.id.SobreAlunoFragment)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.meuPerfilProfessorFragment,
+                R.id.atividadesProfessorFragment,R.id.sobreProfessorFragment)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -65,26 +66,33 @@ public class AlunoActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-    public void exibirConfirmação () {
-        AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
-        msgBox.setTitle("Sair");
-        msgBox.setIcon(R.drawable.ic_menu_sair);
-        msgBox.setMessage("Tem certeza que deseja sair?");
-        msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
-        });
-        msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-        msgBox.show();
-    }
+        public void exibirConfirmação () {
+            AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
+            msgBox.setTitle("Sair");
+            msgBox.setIcon(R.drawable.ic_menu_sair);
+            msgBox.setMessage("Tem certeza que deseja sair?");
+            msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                }
+            });
+            msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            });
+            msgBox.show();
+        }
 
 
+
+    //@Override
+   //public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+       // getMenuInflater().inflate(R.menu.professor, menu);
+       // return true;
+    //}
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);

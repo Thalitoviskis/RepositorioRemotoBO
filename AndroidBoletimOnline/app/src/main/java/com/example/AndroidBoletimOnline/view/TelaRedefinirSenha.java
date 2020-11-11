@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline;
+package com.example.AndroidBoletimOnline.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.AndroidBoletimOnline.R;
+import com.example.AndroidBoletimOnline.model.MainActivity;
 
 public class TelaRedefinirSenha extends AppCompatActivity {
 

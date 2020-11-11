@@ -8,22 +8,22 @@
 
     <fragment
         android:id="@+id/InicioAlunoFragment"
-        android:name="com.example.AndroidBoletimOnline.InicioAlunoFragment"
+        android:name="com.example.AndroidBoletimOnline.view.InicioAlunoFragment"
         android:label="Início"
         tools:layout="@layout/fragment_inicio_aluno" />
     <fragment
         android:id="@+id/MeuPerfilAlunoFragment"
-        android:name="com.example.AndroidBoletimOnline.MeuPerfilAlunoFragment"
+        android:name="com.example.AndroidBoletimOnline.view.MeuPerfilAlunoFragment"
         android:label="Meu_perfil"
         tools:layout="@layout/fragment_meu_perfil_aluno" />
     <fragment
         android:id="@+id/BoletimAlunoFragment"
-        android:name="com.example.AndroidBoletimOnline.BoletimAlunoFragment"
+        android:name="com.example.AndroidBoletimOnline.view.BoletimAlunoFragment"
         android:label="Seu boletim"
         tools:layout="@layout/fragment_boletim_aluno" />
     <fragment
         android:id="@+id/SobreAlunoFragment"
-        android:name="com.example.AndroidBoletimOnline.SobreAlunoFragment"
+        android:name="com.example.AndroidBoletimOnline.view.SobreAlunoFragment"
         android:label="Sobre"
         tools:layout="@layout/fragment_sobre_aluno" />
 </navigation>

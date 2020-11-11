@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/atividadesProfessorFragment"
-        android:name="com.example.AndroidBoletimOnline.AtividadesProfessorFragment"
+        android:name="com.example.AndroidBoletimOnline.view.AtividadesProfessorFragment"
         android:label="Atividades"
         tools:layout="@layout/fragment_atividades_professor" />
     <fragment
         android:id="@+id/sobreProfessorFragment"
-        android:name="com.example.AndroidBoletimOnline.SobreProfessorFragment"
+        android:name="com.example.AndroidBoletimOnline.view.SobreProfessorFragment"
         android:label="Sobre"
         tools:layout="@layout/fragment_sobre_professor" />
     <fragment
         android:id="@+id/meuPerfilProfessorFragment"
-        android:name="com.example.AndroidBoletimOnline.MeuPerfilProfessorFragment"
+        android:name="com.example.AndroidBoletimOnline.view.MeuPerfilProfessorFragment"
         android:label="fragment_meu_perfil_professor"
         tools:layout="@layout/fragment_meu_perfil_professor" />
 </navigation>

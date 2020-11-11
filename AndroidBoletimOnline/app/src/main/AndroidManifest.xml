@@ -9,24 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RedefinirSenhaTempAluno"/>
+        <activity android:name=".view.RedefinirSenhaTempAluno"/>
 
-        <activity android:name=".RedefinirSenhaTempProfessor" />
+        <activity android:name=".view.RedefinirSenhaTempProfessor" />
         <activity
-            android:name=".ProfessorActivity"
+            android:name=".view.ProfessorActivity"
             android:label="@string/title_activity_professor"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AlunoActivity"
+            android:name=".view.AlunoActivity"
             android:label="@string/title_activity_AlunoActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".model.MainActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
-            android:name=".TelaRedefinirSenha"
+            android:name=".view.TelaRedefinirSenha"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Splash">
+        <activity android:name=".view.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

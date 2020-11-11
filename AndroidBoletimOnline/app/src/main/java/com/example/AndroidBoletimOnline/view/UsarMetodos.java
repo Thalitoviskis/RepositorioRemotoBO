@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline;
+package com.example.AndroidBoletimOnline.view;
 
 import android.content.Context;
 import android.content.DialogInterface;

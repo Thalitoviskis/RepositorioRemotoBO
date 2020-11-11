@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline;
+package com.example.AndroidBoletimOnline.model;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
@@ -16,7 +16,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.AndroidBoletimOnline.R;
+import com.example.AndroidBoletimOnline.view.TelaRedefinirSenha;
+import com.example.AndroidBoletimOnline.view.UsarMetodos;
 import com.example.AndroidBoletimOnline.databinding.ActivityMainBinding;
+import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempAluno;
+import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempProfessor;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -89,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     User.requestFocus();
 
                 } else if (binding.rbAluno.isChecked()) {
-                    Intent intent = new Intent(getApplicationContext(),RedefinirSenhaTempAluno.class);
+                    Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class);
                     startActivity(intent);
 
                 } else if (binding.rbProfessor.isChecked()) {

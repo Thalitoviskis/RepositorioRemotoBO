@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline;
+package com.example.AndroidBoletimOnline.view;
 
 import android.os.Bundle;
 
@@ -8,13 +8,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.AndroidBoletimOnline.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BoletimAlunoFragment#newInstance} factory method to
+ * Use the {@link SobreAlunoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BoletimAlunoFragment extends Fragment {
+public class SobreAlunoFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -24,7 +26,7 @@ public class BoletimAlunoFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BoletimAlunoFragment() {
+    public SobreAlunoFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class BoletimAlunoFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment boletim_aluno.
+     * @return A new instance of fragment sobre_aluno.
      */
     // TODO: Rename and change types and number of parameters
-    public static BoletimAlunoFragment newInstance(String param1, String param2) {
-        BoletimAlunoFragment fragment = new BoletimAlunoFragment();
+    public static SobreAlunoFragment newInstance(String param1, String param2) {
+        SobreAlunoFragment fragment = new SobreAlunoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class BoletimAlunoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_boletim_aluno, container, false);
+        return inflater.inflate(R.layout.fragment_sobre_aluno, container, false);
     }
 }
