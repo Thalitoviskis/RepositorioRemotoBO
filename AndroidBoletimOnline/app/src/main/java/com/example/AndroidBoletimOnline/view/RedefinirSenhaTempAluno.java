@@ -24,7 +24,7 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
 
         tvAlert = findViewById(R.id.tvAlert);
         edtSenhaTempAluno = findViewById(R.id.edtSenhaTempAluno);
-        edtConfirSenhaTempAluno = findViewById(R.id.edtConfirmeSPerfilProf);
+        edtConfirSenhaTempAluno = findViewById(R.id.edtConfirSenhaTempAluno);
 
         btnOK = findViewById(R.id.btnOK);
 

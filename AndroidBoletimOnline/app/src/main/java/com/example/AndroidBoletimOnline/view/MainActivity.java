@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     User.requestFocus();
 
                 } else if (binding.rbAluno.isChecked()) {
-                    Intent intent = new Intent(getApplicationContext(),AlunoActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),RedefinirSenhaTempAluno.class);
                     startActivity(intent);
 
                 } else if (binding.rbProfessor.isChecked()) {
