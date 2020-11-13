@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 import com.example.AndroidBoletimOnline.R;
-import com.example.AndroidBoletimOnline.model.MainActivity;
 
 public class Splash extends AppCompatActivity {
 

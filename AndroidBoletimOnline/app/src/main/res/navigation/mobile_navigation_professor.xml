@@ -18,6 +18,6 @@
     <fragment
         android:id="@+id/meuPerfilProfessorFragment"
         android:name="com.example.AndroidBoletimOnline.view.MeuPerfilProfessorFragment"
-        android:label="fragment_meu_perfil_professor"
+        android:label="Meu Perfil"
         tools:layout="@layout/fragment_meu_perfil_professor" />
 </navigation>

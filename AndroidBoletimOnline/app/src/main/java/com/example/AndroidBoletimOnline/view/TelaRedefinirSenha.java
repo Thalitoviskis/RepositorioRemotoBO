@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.AndroidBoletimOnline.R;
-import com.example.AndroidBoletimOnline.model.MainActivity;
 
 public class TelaRedefinirSenha extends AppCompatActivity {
 

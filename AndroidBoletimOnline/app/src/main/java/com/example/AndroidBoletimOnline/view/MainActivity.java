@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline.model;
+package com.example.AndroidBoletimOnline.view;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
