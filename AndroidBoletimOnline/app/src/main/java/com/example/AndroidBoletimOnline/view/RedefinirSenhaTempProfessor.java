@@ -56,8 +56,10 @@ public class RedefinirSenhaTempProfessor extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), ProfessorActivity.class);
                     startActivity(intent);
                     finish();
+
                 }
             }
+
 
 
         });

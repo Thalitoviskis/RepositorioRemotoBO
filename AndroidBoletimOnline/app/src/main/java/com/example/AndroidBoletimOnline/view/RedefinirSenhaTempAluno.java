@@ -31,18 +31,18 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String senhaTempA = edtSenhaTempAluno.getText().toString();
-                String confirSTempA = edtConfirSenhaTempAluno.getText().toString();
+                String senhaT = edtSenhaTempAluno.getText().toString();
+                String confirS = edtConfirSenhaTempAluno.getText().toString();
 
 
-                if (senhaTempA.isEmpty() || confirSTempA.isEmpty()) {//Verificar se estão vazios
+                if (senhaT.isEmpty() || confirS.isEmpty()) {//Verificar se estão vazios
                     UsarMetodos.alert("Não deixe em branco.",
                             getApplicationContext());
                     edtSenhaTempAluno.setText("");
                     edtConfirSenhaTempAluno.setText("");
                     edtSenhaTempAluno.requestFocus();
 
-                } else if (!senhaTempA.equals(confirSTempA)) {
+                } else if (!senhaT.equals(confirS)) {
                     UsarMetodos.alert("Senhas não conferem.", getApplicationContext());
                     edtSenhaTempAluno.setText("");
                     edtConfirSenhaTempAluno.setText("");

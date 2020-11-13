@@ -60,7 +60,7 @@
         android:drawableLeft="@drawable/ic_menu_cadeado"
         android:drawableTint="@color/CorCad"
         android:ems="10"
-        android:hint="  Digite sua nova senha"
+        android:hint="Confirme sua nova senha"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
