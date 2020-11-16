@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -24,8 +25,6 @@ import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempAluno;
 import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempProfessor;
 
 public class MainActivity extends AppCompatActivity {
-
-
 
     EditText User, Pwd;
     Button btnLogin;
@@ -94,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                     User.requestFocus();
 
                 } else if (binding.rbAluno.isChecked()) {
-                    Intent intent = new Intent(getApplicationContext(),RedefinirSenhaTempAluno.class);
+                    Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class);
                     startActivity(intent);
 
                 } else if (binding.rbProfessor.isChecked()) {
@@ -138,11 +137,31 @@ public class MainActivity extends AppCompatActivity {
         msgBox.show();
     }
 
+    class integracao extends AsyncTask<String, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+            //Codigo
+        }
 
-    @Override
-        protected void onDestroy () {
+        @Override
+        protected String doInBackground(String... strings) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String doInBackgroundValueReturned) {
+            //Codigo
+        }
+
+        protected void onProgressUpdate(Integer... params) {//Codigo}
+        }
+
+    }
+        @Override
+        protected void onDestroy() {
             super.onDestroy();
             binding = null;
         }
     }
+
 
