@@ -4,8 +4,10 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -36,9 +38,14 @@ public class MainActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
         //Tudo que ocorre no inicio do app > Fica em tela cheia
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+
+        final SharedPreferences sharedPrefs = getApplicationContext().getSharedPreferences("socorro", Context.MODE_PRIVATE);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -58,18 +65,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        /* SharedPreferences sharedPrefs = getApplicationContext().getSharedPreferences("primeiro acesso", Context.MODE_PRIVATE);
-
-        if (!sharedPrefs.getBoolean("primeiroAcesso", false)) {
-            Intent intent = new Intent(this, RedefinirSenhaTempActivity.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-            startActivity(intent);
-            finish();
-
-            return;
-        }
-        */
 
         User.requestFocus();
 
@@ -80,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
                 String senha = Pwd.getText().toString();
+
 
                 if (usuario.isEmpty() || senha.isEmpty()) {//Verificar se estão vazio
                     UsarMetodos.alert("Preencha todos os campos.",
@@ -99,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
                 } else if (binding.rbProfessor.isChecked()) {
                     Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempProfessor.class);
                     startActivity(intent);
+
+                } else if (!sharedPrefs.getBoolean("primeiroAcesso", false)) {
+                    Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class );
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                    startActivity(intent);
+                    finish();
+
+                    return;
                 }
             }
 

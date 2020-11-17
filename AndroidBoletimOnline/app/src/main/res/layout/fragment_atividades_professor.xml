@@ -7,12 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".view.AtividadesProfessorFragment">
 
+
     <TextView
         android:id="@+id/txtAtivi"
         android:layout_width="262dp"
         android:layout_height="23dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="132dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/amiko"
         android:text="Adicione ou visualize suas atividades."
         android:textSize="14sp"
@@ -24,13 +25,12 @@
         android:id="@+id/imvAdd"
         android:layout_width="65dp"
         android:layout_height="46dp"
-        android:layout_marginTop="117dp"
-        android:layout_marginEnd="41dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="48dp"
         android:clickable="true"
         android:src="@drawable/adicionar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@id/swipeDown"

@@ -3,6 +3,7 @@ package com.example.AndroidBoletimOnline.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,11 +13,6 @@ import android.widget.TextView;
 import com.example.AndroidBoletimOnline.R;
 
 public class RedefinirSenhaTempProfessor extends AppCompatActivity {
-
-   /* SharedPreferences sharedpreferences;
-    boolean splashScreen;
-
-    */
 
     TextView tvTextoRS;
     EditText edtConfirSenhaTempProfessor, edtSenhaTempProfessor;
@@ -31,7 +27,6 @@ public class RedefinirSenhaTempProfessor extends AppCompatActivity {
         edtSenhaTempProfessor = findViewById(R.id.edtSenhaTempProfessor);
         edtConfirSenhaTempProfessor = findViewById(R.id.edtConfirSenhaTmpProfessor);
         btnOk = findViewById(R.id.btnOk);
-
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +58,8 @@ public class RedefinirSenhaTempProfessor extends AppCompatActivity {
 
 
         });
+
+
 
     }
 }
