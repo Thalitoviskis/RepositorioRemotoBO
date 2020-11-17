@@ -7,16 +7,50 @@
     android:layout_height="match_parent"
     tools:context=".view.AtividadesProfessorFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="344dp"
-        android:text="Atividade Professor"
-        android:textSize="30sp"
+        android:id="@+id/txtAtivi"
+        android:layout_width="262dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="132dp"
+        android:fontFamily="@font/amiko"
+        android:text="Adicione ou visualize suas atividades."
+        android:textSize="14sp"
+        android:textStyle="italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imvAdd"
+        android:layout_width="65dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="117dp"
+        android:layout_marginEnd="41dp"
+        android:clickable="true"
+        android:src="@drawable/adicionar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@id/swipeDown"
+        android:layout_width="329dp"
+        android:layout_height="483dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imvAdd">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListaAtv"
+            android:layout_width="361dp"
+            android:layout_height="464dp"
+            tools:layout_editor_absoluteX="24dp"
+            tools:layout_editor_absoluteY="205dp" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

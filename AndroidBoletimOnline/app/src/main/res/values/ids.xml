@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="swipeDown" type="id" />
+    <item name="no" type="id" />
+    <item name="nomeAtv" type="id" />
+</resources>

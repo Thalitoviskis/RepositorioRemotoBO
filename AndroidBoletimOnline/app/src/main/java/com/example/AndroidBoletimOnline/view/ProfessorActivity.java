@@ -21,6 +21,7 @@ import androidx.appcompat.widget.Toolbar;
 
 public class ProfessorActivity extends AppCompatActivity {
 
+
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
