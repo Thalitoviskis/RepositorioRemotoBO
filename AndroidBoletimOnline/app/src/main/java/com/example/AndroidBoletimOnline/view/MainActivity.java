@@ -3,7 +3,9 @@ package com.example.AndroidBoletimOnline.view;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,12 +21,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.AndroidBoletimOnline.API.HttpBuilder;
+import com.example.AndroidBoletimOnline.API.HttpCommand;
 import com.example.AndroidBoletimOnline.R;
 import com.example.AndroidBoletimOnline.view.TelaRedefinirSenha;
 import com.example.AndroidBoletimOnline.view.UsarMetodos;
 import com.example.AndroidBoletimOnline.databinding.ActivityMainBinding;
 import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempAluno;
 import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempProfessor;
+
+import java.sql.CallableStatement;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,6 +78,26 @@ public class MainActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.GINGERBREAD)
             @Override
             public void onClick(View v) {
+
+                HttpBuilder httpBuilder =
+                        new HttpBuilder(
+                                MainActivity.this,
+                                "http://10.0.2.2:51882/Administrador/Login");
+
+                httpBuilder
+                        .createPost()
+                        .retorno(new HttpCommand.TratadorRetornoChamada() {
+                            @Override
+                            public void trataRetornoChamada(Object dados) {
+                                MainActivity.MsgShowRetorno.newInstance((String)dados)
+                                        .show(getSupportFragmentManager(), "ShowRetorno");
+                            }
+                        })
+                        .addParam("Email", "adm@gmail.com")
+                        .addParam("Senha", "1234")
+                        .execute();
+
+
 
                 String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
                 String senha = Pwd.getText().toString();
@@ -166,6 +192,37 @@ public class MainActivity extends AppCompatActivity {
         protected void onDestroy() {
             super.onDestroy();
             binding = null;
+        }
+    public static class MsgShowRetorno extends DialogFragment {
+        static MainActivity.MsgShowRetorno newInstance(String retorno) {
+
+            MainActivity.MsgShowRetorno dialog = new MainActivity.MsgShowRetorno();
+            Bundle bundle = new Bundle();
+            bundle.putString("retorno", retorno);
+            dialog.setArguments(bundle);
+            return dialog;
+        }
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+
+            String retorno = getArguments().getString("retorno");
+
+            //Use o Bulder(construtor) para facilitar a construcao
+            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+            builder.setMessage(retorno)
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    //acao para o botão “OK”
+                                    dialog.dismiss();
+                                }
+                            }
+                    );
+            //Cria a caixa de dialogo configurada nos métodos acima
+            return builder.create();
+        }
+
+
         }
     }
 
