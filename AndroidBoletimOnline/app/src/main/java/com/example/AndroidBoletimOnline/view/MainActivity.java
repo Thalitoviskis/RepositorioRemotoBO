@@ -79,10 +79,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
+                String senha = Pwd.getText().toString();
+
                 HttpBuilder httpBuilder =
                         new HttpBuilder(
                                 MainActivity.this,
-                                "http://10.0.2.2:51882/Administrador/Login");
+                                "http://10.0.2.2:44372/api/Login");
+               // "http://10.0.2.2:51882/api/Login");
 
                 httpBuilder
                         .createPost()
@@ -93,14 +97,13 @@ public class MainActivity extends AppCompatActivity {
                                         .show(getSupportFragmentManager(), "ShowRetorno");
                             }
                         })
-                        .addParam("Email", "adm@gmail.com")
-                        .addParam("Senha", "1234")
+                        .addParam("Email", usuario)
+                        .addParam("Senha", senha)
                         .execute();
 
 
 
-                String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
-                String senha = Pwd.getText().toString();
+
 
 
                 if (usuario.isEmpty() || senha.isEmpty()) {//Verificar se estão vazio
