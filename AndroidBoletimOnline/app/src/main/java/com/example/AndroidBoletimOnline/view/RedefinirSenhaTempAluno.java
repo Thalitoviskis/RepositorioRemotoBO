@@ -26,6 +26,8 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
 
 
 
+        //lerSharedPreferences();
+
         tvAlert = findViewById(R.id.tvAlert);
         edtSenhaTempAluno = findViewById(R.id.edtSenhaTempAluno);
         edtConfirSenhaTempAluno = findViewById(R.id.edtConfirSenhaTempAluno);
@@ -63,4 +65,25 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
         });
 
     }
+    /*private void lerSharedPreferences() {
+
+        SharedPreferences sharedPreferences =
+                getSharedPreferences("guardarValoresPref", Context.MODE_PRIVATE);
+        if(sharedPreferences.contains("botaoAtivo")) {
+            //Key: Chave principal, defValeu: Valor Padrão
+            String recuperaInfor= sharedPreferences.getString("botaoAtivo", "");
+            String recuperaUser= sharedPreferences.getString("user", "");
+            String recuperaPwd= sharedPreferences.getString("pwd", "");
+            if(recuperaInfor.equals("ligado")){
+                edtUsuario.setText(recuperaUser);
+                edtSenha.setText(recuperaPwd);
+                tbLembrarSenha.setChecked(true);
+            }else{
+                edtSenha.setText("");
+                edtUsuario.setText("");
+                tbLembrarSenha.setChecked(false);
+            }
+        }
+    }*/
+
 }
