@@ -19,14 +19,15 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
     EditText edtSenhaTempAluno, edtConfirSenhaTempAluno;
     Button btnOK;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redefinir_senha_temp_aluno);
 
 
-
         //lerSharedPreferences();
+
 
         tvAlert = findViewById(R.id.tvAlert);
         edtSenhaTempAluno = findViewById(R.id.edtSenhaTempAluno);
@@ -41,7 +42,6 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
                 String senhaT = edtSenhaTempAluno.getText().toString();
                 String confirS = edtConfirSenhaTempAluno.getText().toString();
 
-
                 if (senhaT.isEmpty() || confirS.isEmpty()) {//Verificar se estão vazios
                     UsarMetodos.alert("Não deixe em branco.",
                             getApplicationContext());
@@ -55,35 +55,17 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
                     edtConfirSenhaTempAluno.setText("");
 
                 } else {
+
                     Intent intent = new Intent(getApplicationContext(), AlunoActivity.class);
                     startActivity(intent);
                     finish();
                 }
-            }
 
+            }
 
         });
-
     }
-    /*private void lerSharedPreferences() {
-
-        SharedPreferences sharedPreferences =
-                getSharedPreferences("guardarValoresPref", Context.MODE_PRIVATE);
-        if(sharedPreferences.contains("botaoAtivo")) {
-            //Key: Chave principal, defValeu: Valor Padrão
-            String recuperaInfor= sharedPreferences.getString("botaoAtivo", "");
-            String recuperaUser= sharedPreferences.getString("user", "");
-            String recuperaPwd= sharedPreferences.getString("pwd", "");
-            if(recuperaInfor.equals("ligado")){
-                edtUsuario.setText(recuperaUser);
-                edtSenha.setText(recuperaPwd);
-                tbLembrarSenha.setChecked(true);
-            }else{
-                edtSenha.setText("");
-                edtUsuario.setText("");
-                tbLembrarSenha.setChecked(false);
-            }
-        }
-    }*/
-
 }
+
+
+

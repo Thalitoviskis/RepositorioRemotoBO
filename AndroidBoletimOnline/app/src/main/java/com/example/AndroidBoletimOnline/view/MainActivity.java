@@ -14,12 +14,14 @@ import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.FileUtils;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.AndroidBoletimOnline.API.HttpBuilder;
 import com.example.AndroidBoletimOnline.API.HttpCommand;
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogin;
     TextView btnRedefinirSenha, btnSair;
     ActivityMainBinding binding;
+    SharedPreferences sPreferences = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         //Tudo que ocorre no inicio do app > Fica em tela cheia
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
-        final SharedPreferences sharedPrefs = getApplicationContext().getSharedPreferences("socorro", Context.MODE_PRIVATE);
+        sPreferences = getSharedPreferences("firstRun", MODE_PRIVATE);
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -63,13 +67,13 @@ public class MainActivity extends AppCompatActivity {
         btnRedefinirSenha = findViewById(R.id.btnRedefinirSenha);
 
         btnSair = findViewById(R.id.btnSair);
+
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 exibirConfirmaçãoDois();
             }
         });
-
 
 
         User.requestFocus();
@@ -82,35 +86,12 @@ public class MainActivity extends AppCompatActivity {
                 String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
                 String senha = Pwd.getText().toString();
 
-                HttpBuilder httpBuilder =
-                        new HttpBuilder(
-                                MainActivity.this,
-                                "http://10.0.2.2:44372/api/Login");
-               // "http://10.0.2.2:51882/api/Login");
-
-                httpBuilder
-                        .createPost()
-                        .retorno(new HttpCommand.TratadorRetornoChamada() {
-                            @Override
-                            public void trataRetornoChamada(Object dados) {
-                                MainActivity.MsgShowRetorno.newInstance((String)dados)
-                                        .show(getSupportFragmentManager(), "ShowRetorno");
-                            }
-                        })
-                        .addParam("Email", usuario)
-                        .addParam("Senha", senha)
-                        .execute();
-
-
-
-
-
 
                 if (usuario.isEmpty() || senha.isEmpty()) {//Verificar se estão vazio
                     UsarMetodos.alert("Preencha todos os campos.",
                             getApplicationContext());
 
-                } else if (UsarMetodos.login(usuario, senha) == false) {//Passa usúario e senha
+                } else if (!UsarMetodos.login(usuario, senha)) {//Passa usúario e senha
                     UsarMetodos.alert("Usuário ou senha inválidos.",
                             getApplicationContext());
                     User.setText("");
@@ -118,85 +99,83 @@ public class MainActivity extends AppCompatActivity {
                     User.requestFocus();
 
                 } else if (binding.rbAluno.isChecked()) {
-                    Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class);
-                    startActivity(intent);
+                    if (!usuario.contains("aluno")) {
+                        UsarMetodos.alert("Usúario não identificado",
+                                getApplicationContext());
+                    } else {
+                        Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class);
+                        startActivity(intent);
+                    }
 
                 } else if (binding.rbProfessor.isChecked()) {
-                    Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempProfessor.class);
-                    startActivity(intent);
+                    if (!usuario.contains("professor")) {
+                        UsarMetodos.alert("Usuario não identificado",
+                                getApplicationContext());
+                    } else {
+                        Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempProfessor.class);
+                        startActivity(intent);
 
-                } else if (!sharedPrefs.getBoolean("primeiroAcesso", false)) {
-                    Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class );
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                    startActivity(intent);
-                    finish();
-
-                    return;
+                    }
                 }
-            }
-
-            //} else {
-            //Intent intent = new Intent(getApplicationContext(), AlunoActivity.class);
-            //intent.putExtra("chave", usuario);
-            //startActivity(intent);
-            //}
-            //}
-
-        });
-        btnRedefinirSenha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), TelaRedefinirSenha.class);
-                startActivity(intent);
+                btnRedefinirSenha.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(getApplicationContext(), TelaRedefinirSenha.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
     }
+    @Override
+    public void onPause() {
+        super.onPause();
 
-    public void exibirConfirmaçãoDois() {
-        AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
-        msgBox.setTitle("Sair");
-        msgBox.setMessage("Tem certeza que deseja sair?");
-        msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
-        });
-        msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-        msgBox.show();
+        if (sPreferences.getBoolean("firstRun", true)) {
+            sPreferences.edit().putBoolean("firstRun",true).apply();
+            Toast.makeText(getApplicationContext(), "segundo? terceiro?...", Toast.LENGTH_LONG).show();
+
+        } else {
+            sPreferences.edit().putBoolean("firstRun", false).apply();
+            Toast.makeText(getApplicationContext(), "primeiro launcher", Toast.LENGTH_LONG).show();
+        }
     }
 
-    class integracao extends AsyncTask<String, Integer, String> {
-        @Override
-        protected void onPreExecute() {
-            //Codigo
+
+
+        public void exibirConfirmaçãoDois () {
+            AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
+            msgBox.setTitle("Sair");
+            msgBox.setMessage("Tem certeza que deseja sair?");
+            msgBox.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                }
+            });
+            msgBox.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    finish();
+                }
+            });
+            msgBox.show();
         }
 
-        @Override
-        protected String doInBackground(String... strings) {
-            return null;
-        }
 
-        @Override
-        protected void onPostExecute(String doInBackgroundValueReturned) {
-            //Codigo
-        }
 
-        protected void onProgressUpdate(Integer... params) {//Codigo}
-        }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        binding = null;
     }
-        @Override
-        protected void onDestroy() {
-            super.onDestroy();
-            binding = null;
-        }
-    public static class MsgShowRetorno extends DialogFragment {
+}
+
+
+
+
+
+
+   /* public static class MsgShowRetorno extends DialogFragment {
         static MainActivity.MsgShowRetorno newInstance(String retorno) {
 
             MainActivity.MsgShowRetorno dialog = new MainActivity.MsgShowRetorno();
@@ -223,10 +202,9 @@ public class MainActivity extends AppCompatActivity {
                     );
             //Cria a caixa de dialogo configurada nos métodos acima
             return builder.create();
-        }
+        }*/
 
 
-        }
-    }
+
 
 

@@ -15,13 +15,18 @@ public class UsarMetodos {
         boolean verificacao = false; //Varíavel com Verdadeiro
 
 
+
         if (usuario.trim().equals("Usuario") && senha.trim().equals("999")) {//trim() apagar todos os espaços
             verificacao = true;
-        } else if (usuario.trim().equals("prof") && senha.trim().equals("123")) {
+        } else if (usuario.trim().equals("thalita@professor") && senha.trim().equals("123")) {
             verificacao = true;
-        } else if (usuario.trim().equals("aluno") && senha.trim().equals("123")) {
+        } else if (usuario.trim().equals("jhonathan@aluno") && senha.trim().equals("123")) {
             verificacao = true;
-        }else if (usuario.trim().equals("teste") && senha.trim().equals("111")){
+        } else if (usuario.trim().equals("thalita@aluno") && senha.trim().equals("123")) {
+            verificacao = true;
+        }else if (usuario.trim().equals("teste@aluno") && senha.trim().equals("111")){
+            verificacao = true;
+        }else if (usuario.trim().equals("testu@aluno") && senha.trim().equals("111")){
             verificacao = true;
         }
         return verificacao;
@@ -29,8 +34,7 @@ public class UsarMetodos {
 
     public static void alert(String s, Context context) {
         Toast toast = Toast.makeText(context, s, Toast.LENGTH_LONG);
-        toast.setGravity(Gravity.CENTER_HORIZONTAL |
-                Gravity.CENTER_HORIZONTAL, 0, 0);
+        toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
     }
 }
