@@ -54,8 +54,6 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
-        sPreferences = getSharedPreferences("firstRun", MODE_PRIVATE);
-
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -86,6 +84,14 @@ public class MainActivity extends AppCompatActivity {
                 String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
                 String senha = Pwd.getText().toString();
 
+                /*if(PreferencesManager.getInt(getApplicationContext(),
+                        PreferencesManager.ENTERING_FIRST_TIME,
+                        1) == 1) {
+                    //Salva informação de que o usuário já entrou no app a primeira vez
+                    PreferencesManager.storeInt(getApplicationContext(), PreferencesManager.ENTERING_FIRST_TIME, 0);
+                    //Exibe saudação
+                }
+                else {*/
 
                 if (usuario.isEmpty() || senha.isEmpty()) {//Verificar se estão vazio
                     UsarMetodos.alert("Preencha todos os campos.",
@@ -127,20 +133,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public void onPause() {
-        super.onPause();
-
-        if (sPreferences.getBoolean("firstRun", true)) {
-            sPreferences.edit().putBoolean("firstRun",true).apply();
-            Toast.makeText(getApplicationContext(), "segundo? terceiro?...", Toast.LENGTH_LONG).show();
-
-        } else {
-            sPreferences.edit().putBoolean("firstRun", false).apply();
-            Toast.makeText(getApplicationContext(), "primeiro launcher", Toast.LENGTH_LONG).show();
-        }
-    }
-
 
 
         public void exibirConfirmaçãoDois () {

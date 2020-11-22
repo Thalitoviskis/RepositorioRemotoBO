@@ -13,8 +13,10 @@ public class PreferencesManager {
         editor.commit();
     }
 
-    public static int getInt(Context context, String key, int defaultValue){
+    public static int getInt( Context context,String key, int defaultValue){
             return context.getSharedPreferences("MyPrefs", Context.MODE_PRIVATE).getInt(key, defaultValue);
     }
+
+
 }
 

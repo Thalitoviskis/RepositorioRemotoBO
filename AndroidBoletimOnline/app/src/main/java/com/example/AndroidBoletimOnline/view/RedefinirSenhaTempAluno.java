@@ -39,6 +39,8 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 String senhaT = edtSenhaTempAluno.getText().toString();
                 String confirS = edtConfirSenhaTempAluno.getText().toString();
 
