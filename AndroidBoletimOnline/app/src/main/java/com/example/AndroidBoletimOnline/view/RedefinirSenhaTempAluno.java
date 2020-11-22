@@ -39,10 +39,14 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                PreferencesManager.storeInt(getApplicationContext(),
+                        PreferencesManager.ENTERING_FIRST_TIME, 1);
+                finish();
 
 
                 String senhaT = edtSenhaTempAluno.getText().toString();
                 String confirS = edtConfirSenhaTempAluno.getText().toString();
+
 
                 if (senhaT.isEmpty() || confirS.isEmpty()) {//Verificar se estão vazios
                     UsarMetodos.alert("Não deixe em branco.",
@@ -62,6 +66,7 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }
+
 
             }
 

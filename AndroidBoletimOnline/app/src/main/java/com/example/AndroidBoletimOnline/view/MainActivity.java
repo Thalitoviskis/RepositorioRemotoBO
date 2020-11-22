@@ -26,6 +26,8 @@ import android.widget.Toast;
 import com.example.AndroidBoletimOnline.API.HttpBuilder;
 import com.example.AndroidBoletimOnline.API.HttpCommand;
 import com.example.AndroidBoletimOnline.R;
+import com.example.AndroidBoletimOnline.controller.UsuarioController;
+import com.example.AndroidBoletimOnline.model.Usuario;
 import com.example.AndroidBoletimOnline.view.TelaRedefinirSenha;
 import com.example.AndroidBoletimOnline.view.UsarMetodos;
 import com.example.AndroidBoletimOnline.databinding.ActivityMainBinding;
@@ -33,15 +35,18 @@ import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempAluno;
 import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempProfessor;
 
 import java.sql.CallableStatement;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     EditText User, Pwd;
     Button btnLogin;
     TextView btnRedefinirSenha, btnSair;
+    String usuarioAtual, bdEmail, senha, bdSenha;
     ActivityMainBinding binding;
-    SharedPreferences sPreferences = null;
 
+    UsuarioController usuarioController;
+    List<Usuario> usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,58 +86,61 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
-                String senha = Pwd.getText().toString();
+                usuarioAtual = User.getText().toString();
+                
 
-                /*if(PreferencesManager.getInt(getApplicationContext(),
-                        PreferencesManager.ENTERING_FIRST_TIME,
-                        1) == 1) {
-                    //Salva informação de que o usuário já entrou no app a primeira vez
-                    PreferencesManager.storeInt(getApplicationContext(), PreferencesManager.ENTERING_FIRST_TIME, 0);
-                    //Exibe saudação
-                }
-                else {*/
+                // String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
+                //String senha =   Pwd.getText().toString();
+
+                usuarioController = new UsuarioController(getApplicationContext());
+
 
                 if (usuario.isEmpty() || senha.isEmpty()) {//Verificar se estão vazio
                     UsarMetodos.alert("Preencha todos os campos.",
                             getApplicationContext());
 
-                } else if (!UsarMetodos.login(usuario, senha)) {//Passa usúario e senha
-                    UsarMetodos.alert("Usuário ou senha inválidos.",
-                            getApplicationContext());
-                    User.setText("");
-                    Pwd.setText("");
-                    User.requestFocus();
-
-                } else if (binding.rbAluno.isChecked()) {
-                    if (!usuario.contains("aluno")) {
-                        UsarMetodos.alert("Usúario não identificado",
-                                getApplicationContext());
-                    } else {
+                } else {
+                    bdEmail = usuario.get(0).getEmail();
+                    bdSenha = usuario.get(0).getSenha();
+                    if (User.equals(bdEmail) && Pwd.equals(bdSenha)) {
                         Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class);
                         startActivity(intent);
-                    }
+                        User.setText("");
+                        Pwd.setText("");
+                        User.requestFocus();
 
-                } else if (binding.rbProfessor.isChecked()) {
-                    if (!usuario.contains("professor")) {
-                        UsarMetodos.alert("Usuario não identificado",
-                                getApplicationContext());
-                    } else {
-                        Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempProfessor.class);
-                        startActivity(intent);
+                    } else if (binding.rbAluno.isChecked()) {
+                        if (!usuario.contains("aluno")) {
+                            UsarMetodos.alert("Usúario não identificado",
+                                    getApplicationContext());
+                        } else {
+                            Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class);
+                            startActivity(intent);
+                        }
 
+                    } else if (binding.rbProfessor.isChecked()) {
+                        if (!usuario.contains("professor")) {
+                            UsarMetodos.alert("Usuario não identificado",
+                                    getApplicationContext());
+                        } else {
+                            Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempProfessor.class);
+                            startActivity(intent);
+
+                        }
                     }
+                    btnRedefinirSenha.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getApplicationContext(), TelaRedefinirSenha.class);
+                            startActivity(intent);
+                        }
+                    });
                 }
-                btnRedefinirSenha.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(getApplicationContext(), TelaRedefinirSenha.class);
-                        startActivity(intent);
-                    }
-                });
             }
         });
     }
+
+
 
 
         public void exibirConfirmaçãoDois () {
