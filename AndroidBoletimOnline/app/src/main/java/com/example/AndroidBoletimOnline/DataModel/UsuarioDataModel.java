@@ -1,6 +1,11 @@
 package com.example.AndroidBoletimOnline.DataModel;
 
-public class UsuarioDataModel {
+import android.content.Intent;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.AndroidBoletimOnline.view.RedefinirSenhaTempAluno;
+
+public class UsuarioDataModel  {
 
     public static final String TABELA = "tb_usuario";
     public static final String ID_USUARIO = "id_usuario";
@@ -20,14 +25,13 @@ public class UsuarioDataModel {
 
     public static String InserirUsuario() {
         query = "INSERT INTO tb_usuario (EMAIL, SENHA) VALUES " +
-                "(1, 'thalita@professor')," +
-                "(2, 'thalita@aluno'), " +
-                "(3, 'jhonathan@professor')," +
-                "(4, 'jhonathan@aluno'), " + TABELA + " (";
+                "('thalita@professor', 123)," +
+                "('thalita@aluno', 123), " +
+                "('jhonathan@professor', 123)," +
+                "('jhonathan@aluno', 123), " + TABELA + " (";
         return query;
-
-
     }
+
 }
 
 

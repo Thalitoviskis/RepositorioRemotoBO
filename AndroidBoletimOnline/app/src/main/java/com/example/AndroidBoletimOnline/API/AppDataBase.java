@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline;
+package com.example.AndroidBoletimOnline.API;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -47,7 +47,9 @@ public class AppDataBase  extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        String sql="DROP TABLE IF EXISTS usuario";
+        db.execSQL(sql);
+        onCreate(db);
     }
     public boolean insert(String tabela, ContentValues values) {
         boolean ok = true;
@@ -76,7 +78,7 @@ public class AppDataBase  extends SQLiteOpenHelper {
         List<Usuario> list = new ArrayList<>();
         Usuario usuarioSenha;
 
-        String sql = "SELECT email,senha FROM " + tabela +
+        String sql = "SELECT email,senha FROM  tb_usuario" + tabela +
                 " WHERE email ='" + usuario + "'";
 
         try {
@@ -95,5 +97,9 @@ public class AppDataBase  extends SQLiteOpenHelper {
         }
         return list;
     }
+    public boolean isUserValid(Usuario usuario) {
+        String sql = "select * from usuarios where user=? and senha=?";
 
+        return  true;
+    }
 }

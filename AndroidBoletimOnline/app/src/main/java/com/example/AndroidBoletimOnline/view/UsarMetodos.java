@@ -9,9 +9,9 @@ import androidx.appcompat.app.AlertDialog;
 
 public class UsarMetodos {
 
-    //private static Context context;
+    private static Context context;
 
-    /*public static boolean login(String usuario, String senha) {
+    public static boolean login(String usuario, String senha) {
         boolean verificacao = false; //Varíavel com Verdadeiro
 
         if (usuario.trim().equals("Usuario") && senha.trim().equals("999")) {//trim() apagar todos os espaços
@@ -28,7 +28,7 @@ public class UsarMetodos {
             verificacao = true;
         }
         return verificacao;
-    }*/
+    }
 
     public static void alert(String s, Context context) {
         Toast toast = Toast.makeText(context, s, Toast.LENGTH_LONG);
