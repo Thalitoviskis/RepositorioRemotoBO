@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,10 +25,10 @@ public class RedefinirSenhaTempProfessor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redefinir_senha_temp_professor);
 
-        tvTextoRS = findViewById(R.id.tvTextoRS);
-        edtSenhaTempProfessor = findViewById(R.id.edtSenhaTempProfessor);
-        edtConfirSenhaTempProfessor = findViewById(R.id.edtConfirSenhaTmpProfessor);
-        btnOk = findViewById(R.id.btnOk);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+
+        inicializarComponentes();
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,10 +58,12 @@ public class RedefinirSenhaTempProfessor extends AppCompatActivity {
             }
 
 
-
         });
-
-
-
+    }
+    private void inicializarComponentes() {
+        tvTextoRS = findViewById(R.id.tvTextoRS);
+        edtSenhaTempProfessor = findViewById(R.id.edtSenhaTempProfessor);
+        edtConfirSenhaTempProfessor = findViewById(R.id.edtConfirSenhaTmpProfessor);
+        btnOk = findViewById(R.id.btnOk);
     }
 }

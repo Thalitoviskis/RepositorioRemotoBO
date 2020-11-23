@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -25,9 +27,12 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_redefinir_senha_temp_aluno);
 
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
         //lerSharedPreferences();
-
+       /* PreferencesManager.storeInt(getApplicationContext(),
+                PreferencesManager.ENTERING_FIRST_TIME, 1 );*/
 
         tvAlert = findViewById(R.id.tvAlert);
         edtSenhaTempAluno = findViewById(R.id.edtSenhaTempAluno);
@@ -39,10 +44,6 @@ public class RedefinirSenhaTempAluno extends AppCompatActivity {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PreferencesManager.storeInt(getApplicationContext(),
-                        PreferencesManager.ENTERING_FIRST_TIME, 1);
-                finish();
-
 
                 String senhaT = edtSenhaTempAluno.getText().toString();
                 String confirS = edtConfirSenhaTempAluno.getText().toString();

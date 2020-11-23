@@ -16,11 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.AndroidBoletimOnline.API.AppDataBase;
-import com.example.AndroidBoletimOnline.API.Biblioteca;
 import com.example.AndroidBoletimOnline.R;
-import com.example.AndroidBoletimOnline.controller.UsuarioController;
-import com.example.AndroidBoletimOnline.model.Usuario;
 import com.example.AndroidBoletimOnline.databinding.ActivityMainBinding;
 
 import java.util.List;
@@ -41,29 +37,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        inicializarComponentes();
+
         //Tudo que ocorre no inicio do app > Fica em tela cheia
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
 
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        User = findViewById(R.id.edtUser);
-        Pwd = findViewById(R.id.edtPwd);
-
-        btnLogin = findViewById(R.id.btnLogin);
-        btnRedefinirSenha = findViewById(R.id.btnRedefinirSenha);
-
-        btnSair = findViewById(R.id.btnSair);
-
         btnSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                exibirConfirmaçãoDois();
+                exibirConfirmação();
             }
         });
-
 
         User.requestFocus();
 
@@ -72,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
-                /* usuarioAtual = User.getText().toString();*/
 
 
                 String usuario = User.getText().toString(); //Obter usúario e senha dos objetos
@@ -84,18 +67,18 @@ public class MainActivity extends AppCompatActivity {
                     UsarMetodos.alert("Preencha todos os campos.",
                             getApplicationContext());
 
-                } else if (binding.rbAluno.isChecked()) {
+                } else if (binding.rbAluno.isChecked()) { //Verificar se o RBAluno está selecionado e tem aluno no email
                     if (!usuario.contains("aluno")) {
-                        UsarMetodos.alert("Usúario não identificado",
+                        UsarMetodos.alert("Usúario não identificado como aluno.",
                                 getApplicationContext());
                     } else {
                         Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempAluno.class);
                         startActivity(intent);
                     }
 
-                } else if (binding.rbProfessor.isChecked()) {
+                } else if (binding.rbProfessor.isChecked()) { //Verificar se o RBProfessor está selecionado e tem professor no email
                     if (!usuario.contains("professor")) {
-                        UsarMetodos.alert("Usuario não identificado",
+                        UsarMetodos.alert("Usuario não identificado como professor.",
                                 getApplicationContext());
                     } else {
                         Intent intent = new Intent(getApplicationContext(), RedefinirSenhaTempProfessor.class);
@@ -114,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-            public void exibirConfirmaçãoDois() {
+            public void exibirConfirmação() {
                 AlertDialog.Builder msgBox = new AlertDialog.Builder(this);
                 msgBox.setTitle("Sair");
                 msgBox.setMessage("Tem certeza que deseja sair?");
@@ -132,49 +115,23 @@ public class MainActivity extends AppCompatActivity {
                 msgBox.show();
             }
 
+            private void inicializarComponentes(){
+                binding = ActivityMainBinding.inflate(getLayoutInflater());
+                setContentView(binding.getRoot());
+
+                User = findViewById(R.id.edtUser);
+                Pwd = findViewById(R.id.edtPwd);
+
+                btnLogin = findViewById(R.id.btnLogin);
+                btnRedefinirSenha = findViewById(R.id.btnRedefinirSenha);
+
+                btnSair = findViewById(R.id.btnSair);
+            }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         binding = null;
     }
 }
-
-
-
-
-
-
-
-   /* public static class MsgShowRetorno extends DialogFragment {
-        static MainActivity.MsgShowRetorno newInstance(String retorno) {
-
-            MainActivity.MsgShowRetorno dialog = new MainActivity.MsgShowRetorno();
-            Bundle bundle = new Bundle();
-            bundle.putString("retorno", retorno);
-            dialog.setArguments(bundle);
-            return dialog;
-        }
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-
-            String retorno = getArguments().getString("retorno");
-
-            //Use o Bulder(construtor) para facilitar a construcao
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setMessage(retorno)
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    //acao para o botão “OK”
-                                    dialog.dismiss();
-                                }
-                            }
-                    );
-            //Cria a caixa de dialogo configurada nos métodos acima
-            return builder.create();
-        }*/
-
-
-
-
 

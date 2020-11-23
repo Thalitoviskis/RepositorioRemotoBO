@@ -51,8 +51,7 @@ public class AlunoActivity extends AppCompatActivity {
 
 
         //Define configurações do navigation drawer
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.InicioAlunoFragment,R.id.MeuPerfilAlunoFragment,R.id.BoletimAlunoFragment,R.id.SobreAlunoFragment)
+        mAppBarConfiguration = new AppBarConfiguration.Builder(R.id.MeuPerfilAlunoFragment,R.id.BoletimAlunoFragment,R.id.SobreAlunoFragment)
                 .setDrawerLayout(drawer)
                 .build();
 

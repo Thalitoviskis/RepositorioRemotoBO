@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline.API;
+/*package com.example.AndroidBoletimOnline.API;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -102,4 +102,4 @@ public class AppDataBase  extends SQLiteOpenHelper {
 
         return  true;
     }
-}
+}*/

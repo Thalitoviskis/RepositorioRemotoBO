@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline.controller;
+/*package com.example.AndroidBoletimOnline.controller;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -26,7 +26,7 @@ public class UsuarioController extends AppDataBase {
 
             return insert(TABELA,dados);
         }
-   /* public List listarLogin(String usuario){
+   public List listarLogin(String usuario){
         return login(TABELA,usuario);
         }
     public int obterUltimoRegistro(){
@@ -34,5 +34,6 @@ public class UsuarioController extends AppDataBase {
 
     public Usuario getClienteById(String id){
         return getClienteById(UsuarioDataModel.TABELA,id);
-        }*/
+
 }
+*/

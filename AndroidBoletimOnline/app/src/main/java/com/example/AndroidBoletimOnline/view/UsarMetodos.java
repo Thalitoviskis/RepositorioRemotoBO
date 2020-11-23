@@ -34,5 +34,6 @@ public class UsarMetodos {
         Toast toast = Toast.makeText(context, s, Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER_HORIZONTAL, 0, 0);
         toast.show();
+
     }
 }

@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline.DataModel;
+/*package com.example.AndroidBoletimOnline.DataModel;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -32,6 +32,6 @@ public class UsuarioDataModel  {
         return query;
     }
 
-}
+}*/
 
 

@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline.model;
+/*package com.example.AndroidBoletimOnline.model;
 
 public class Usuario {
     private String email, senha;
@@ -22,4 +22,4 @@ public class Usuario {
     public void setId(int id){
         this.id = id;
     }
-}
+}*/

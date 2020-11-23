@@ -1,4 +1,4 @@
-package com.example.AndroidBoletimOnline.model;
+/*package com.example.AndroidBoletimOnline.model;
 
 public class Atividade {
     int id;
@@ -27,4 +27,4 @@ public class Atividade {
     public void setNome_atividade(String nome_atividade) {
         this.nome_atividade = nome_atividade;
     }
-}
+}*/

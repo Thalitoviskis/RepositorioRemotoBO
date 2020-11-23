@@ -30,6 +30,6 @@
         android:id="@+id/txtEmailPerfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="JhonathanAngelo@aluno.com" />
+        android:text="thalita@aluno.com" />
 
 </LinearLayout>
